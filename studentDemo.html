@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="">
+<head>
+    <script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+                <link rel="shortcut icon" href="../favicon.ico" type="image/x-icon">
+
+        <title>Vue 3: Binding</title>
+
+
+     <style>
+        body {
+          background-colo: grey;
+        }
+         img {
+             width:400px;
+             margin-bottom: 15px;
+         }
+
+             .gradStyle {
+                 background-color: black; width:400px;color:white
+         }
+             .undGradStyle {
+                 background-color: lightblue; width:400px;
+         }
+
+         #us {
+           display: flex;
+           flex-direction: column;
+           align-items: center;
+           background-color: grey;
+           padding: 10px 0 10px 0;
+         }
+    </style>
+
+
+</head>
+
+<body>
+ <div id="us">
+
+ <div v-for="eachStudent in yall"
+      :class = "{gradStyle: eachStudent.section == '7110', undGradStyle: eachStudent.section == '5110' }"
+      >
+ <h2 :style="[divStructure, divText]" >{{eachStudent.stu_name}} {{eachStudent.last_name}}</h2> <p>{{eachStudent.fact}}</p>
+
+
+     <img :src="dompart1+eachStudent.domain+dompart2">
+
+     </div>
+    </div>
+</body>
+</html>
+<script src="youguys.js"></script>
